@@ -55,7 +55,7 @@ class Invoice
 
   def no_successful_transactions?
     transactions.none? do |transaction|
-      transaction.result == "success"  
+      transaction.result == "success"
     end
   end
 

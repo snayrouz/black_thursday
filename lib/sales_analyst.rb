@@ -207,16 +207,6 @@ class SalesAnalyst
     end
   end
 
-<<<<<<< HEAD
-  # def revenue_by_merchant(merchant_id)
-  #   @engine.merchants_by_total_revenue(merchant_id)
-  # end
-=======
-  def revenue_by_merchant(merchant_id)
-    engine.merchants_by_total_revenue(merchant_id)
-  end
->>>>>>> master
-
   def most_sold_item_for_merchant(merchant_id)
     merchant = engine.find_merchant_by_id(merchant_id)
     most_sold = merchant.invoice_items.reduce({}) do |quantities, invoice_item|
@@ -279,13 +269,15 @@ class SalesAnalyst
 
     def find_top_merchants_by_invoice_count(std_dev, average)
       engine.merchants.all.find_all do |merchant|
-        (engine.find_invoices_by_merchant_id(merchant.id).length - average) > (std_dev * 2)
+        m_length = (engine.find_invoices_by_merchant_id(merchant.id).length)
+        (m_length - average) > (std_dev * 2)
       end
     end
 
     def find_bottom_merchants_by_invoice_count(std_dev, average)
       engine.merchants.all.find_all do |merchant|
-        (engine.find_invoices_by_merchant_id(merchant.id).length + (std_dev * 2)) < (average)
+        i_length = (engine.find_invoices_by_merchant_id(merchant.id).length)
+        i_length + (std_dev * 2) < (average)
       end
     end
 
