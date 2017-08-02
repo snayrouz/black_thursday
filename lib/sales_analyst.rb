@@ -144,7 +144,6 @@ class SalesAnalyst
   end
 
   def total_revenue_by_date(date)
-    # returns an amount in dollars
     invoices = engine.invoices.all
     invoices_by_date = invoices.find_all do |invoice|
       invoice.created_at == date
