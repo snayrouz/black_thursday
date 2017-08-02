@@ -46,4 +46,16 @@ class Merchant
    end
   end
 
+  def pending_invoices?
+    invoices.any? do |invoice|
+      invoice.no_successful_transactions?
+    end
+  end
+
+  def total_revenue
+    invoices.reduce(0) do |sum, invoice|
+      sum + invoice.total
+    end
+  end
+
 end
