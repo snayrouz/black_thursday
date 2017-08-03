@@ -15,23 +15,23 @@ class Invoice
   end
 
   def merchant
-    @invoice_repo.find_merchant_vendor(merchant_id)
+    invoice_repo.find_merchant_vendor(merchant_id)
   end
 
   def items
-    @invoice_repo.find_items_by_invoice_id(id)
+    invoice_repo.find_items_by_invoice_id(id)
   end
 
   def transactions
-    @invoice_repo.find_transactions_by_invoice_id(id)
+    invoice_repo.find_transactions_by_invoice_id(id)
   end
 
   def customer
-    @invoice_repo.find_customers_by_invoice(customer_id)
+    invoice_repo.find_customers_by_invoice(customer_id)
   end
 
   def invoice_items
-    @invoice_repo.find_invoice_items_by_invoice(id)
+    invoice_repo.find_invoice_items_by_invoice(id)
   end
 
   def is_paid_in_full?

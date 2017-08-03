@@ -144,7 +144,6 @@ class SalesAnalyst
   end
 
   def total_revenue_by_date(date)
-    # returns an amount in dollars
     invoices = engine.invoices.all
     invoices_by_date = invoices.find_all do |invoice|
       invoice.created_at == date
@@ -187,13 +186,13 @@ class SalesAnalyst
   end
 
   def revenue_by_merchant(merchant_id)
-    merchant = @engine.find_merchant_by_id(merchant_id)
+    merchant = engine.find_merchant_by_id(merchant_id)
     merchant.total_revenue
   end
 
   def find_merchants_by_invoice(invoices)
     invoices.map do |invoice|
-      @engine.find_merchant_by_id(invoice.merchant_id)
+      engine.find_merchant_by_id(invoice.merchant_id)
     end
   end
 

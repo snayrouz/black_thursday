@@ -18,12 +18,12 @@ class ItemRepository
   end
 
   def all
-    @items.values
+    items.values
   end
 
 
   def find_merchant_vendor(merchant_id)
-    @engine.find_merchant_by_id(merchant_id)
+    engine.find_merchant_by_id(merchant_id)
   end
 
   def find_all_items_to_a_merchant(merchant_id)
@@ -31,10 +31,6 @@ class ItemRepository
       item.merchant_id == merchant_id
     end
   end
-
-  # def find_transactions_by_invoice_id(invoice_id)
-  #
-  # end
 
   def find_by_id(id)
     @items[id]

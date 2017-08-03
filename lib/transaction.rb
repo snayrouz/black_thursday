@@ -18,6 +18,6 @@ class Transaction
 
   def invoice
     transaction_repo.find_invoices_by_transaction(invoice_id)
-
   end
+  
 end
