@@ -164,7 +164,7 @@ class SalesAnalyst
   end
 
   def sort_merchants_by_revenue
-    merchants = @engine.merchants.all
+    merchants = engine.merchants.all
     merchants.sort_by {|merchant| merchant.total_revenue}
   end
 
@@ -173,7 +173,7 @@ class SalesAnalyst
   end
 
   def merchants_with_pending_invoices
-    merchants = @engine.merchants.all
+    merchants = engine.merchants.all
     pending_array = []
     merchants.each do |merchant|
       if merchant.pending_invoices?
