@@ -1,10 +1,7 @@
 require_relative 'item'
 require 'csv'
-require 'pry'
 
 class ItemRepository
-
-
   attr_reader :engine,
               :items
 
@@ -18,12 +15,11 @@ class ItemRepository
   end
 
   def all
-    @items.values
+    items.values
   end
 
-
   def find_merchant_vendor(merchant_id)
-    @engine.find_merchant_by_id(merchant_id)
+    engine.find_merchant_by_id(merchant_id)
   end
 
   def find_all_items_to_a_merchant(merchant_id)
@@ -32,12 +28,8 @@ class ItemRepository
     end
   end
 
-  # def find_transactions_by_invoice_id(invoice_id)
-  #
-  # end
-
   def find_by_id(id)
-    @items[id]
+    items[id]
   end
 
   def find_by_name(name)
