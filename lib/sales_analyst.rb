@@ -3,7 +3,6 @@ require_relative 'merchant_repo'
 require_relative 'invoice_repo'
 
 class SalesAnalyst
-
   include Math
 
   attr_reader :engine

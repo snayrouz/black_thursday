@@ -1,6 +1,5 @@
 require_relative 'customer'
 require 'csv'
-require 'pry'
 
 class CustomerRepository
   attr_reader :customers, :engine
