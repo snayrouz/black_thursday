@@ -5,7 +5,6 @@ require_relative 'invoice_item_repo'
 require_relative 'transaction_repo'
 require_relative 'customer_repo'
 require_relative 'loader'
-require 'pry'
 require 'csv'
 
 class SalesEngine
