@@ -5,6 +5,15 @@ task :test do
   ruby "test/merchant_test.rb"
   ruby "test/item_repo_test.rb"
   ruby "test/merchant_repo_test.rb"
+  ruby "test/transaction_repo_test.rb"
+  ruby "test/transaction_test.rb"
+  ruby "test/invoice_item_repo_test.rb"
+  ruby "test/invoice_item_test.rb"
+  ruby "test/invoice_repo_test.rb"
+  ruby "test/invoice_test.rb"
+  ruby "test/customer_test.rb"
+  ruby "test/customer_repo_test.rb"
+  ruby "test/sales_analyst_test.rb"
   ruby "test/sales_engine_test.rb"
 end
 
