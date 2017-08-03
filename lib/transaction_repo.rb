@@ -1,6 +1,6 @@
 require_relative 'transaction'
 require 'csv'
-require 'pry'
+
 
 class TransactionRepository
   attr_reader :transactions, :engine

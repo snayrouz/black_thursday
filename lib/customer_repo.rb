@@ -1,6 +1,5 @@
 require_relative 'customer'
 require 'csv'
-require 'pry'
 
 class CustomerRepository
   attr_reader :customers, :engine
@@ -42,15 +41,10 @@ class CustomerRepository
     end
   end
 
-  # def find_merchants_by_customer_id(customer_id)
-  #   @engine.find_merchants_by_customer_id(customer_id)
-  # end
-
   def find_merchants_by_customer_id(customer_ids)
     all.find_all do |customer|
       customer_ids.include?(customer.id)
     end
   end
-
 
 end

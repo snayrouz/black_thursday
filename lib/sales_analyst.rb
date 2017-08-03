@@ -3,7 +3,6 @@ require_relative 'merchant_repo'
 require_relative 'invoice_repo'
 
 class SalesAnalyst
-
   include Math
 
   attr_reader :engine
@@ -95,7 +94,6 @@ class SalesAnalyst
     (price_total / merchant.items.count).round(2)
   end
 
-
   def average_average_price_per_merchant
     total_average = engine.merchants.all.reduce(0) do |sum, merchant|
       sum + average_item_price_for_merchant(merchant.id)
@@ -186,13 +184,13 @@ class SalesAnalyst
   end
 
   def revenue_by_merchant(merchant_id)
-    merchant = @engine.find_merchant_by_id(merchant_id)
+    merchant = engine.find_merchant_by_id(merchant_id)
     merchant.total_revenue
   end
 
   def find_merchants_by_invoice(invoices)
     invoices.map do |invoice|
-      @engine.find_merchant_by_id(invoice.merchant_id)
+      engine.find_merchant_by_id(invoice.merchant_id)
     end
   end
 

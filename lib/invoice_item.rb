@@ -24,5 +24,4 @@ class InvoiceItem
     price/100
   end
 
-
 end
